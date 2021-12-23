@@ -65,7 +65,7 @@ def register(request):
 
 
 
-#@api_view(["POST"])
+@api_view(["POST"])
 def login(request):
     username = request.data["username"]
     password = request.data["password"]
@@ -110,7 +110,7 @@ def logout(request):
     )
 
 def statistics(request):
-    return render(request, "django_app/statistics.html")
+    return render(request, "django_app/statistics.html", {"users": User.objects.all().values(), "locataires": Locataire.objects.all().values(), "locateurs": Locateur.objects.all().values()})
 
 
 #@swagger_auto_schema(method="get", tags=["Villes"])
