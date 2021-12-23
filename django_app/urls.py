@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, users, register, login, logout, statistics, towns
+from .views import home, users, register, login, logout, statistics, towns,supprimer
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -24,6 +24,7 @@ urlpatterns = [
     path("login", login, name="login"),
     path("logout", logout, name="logout"),
     path("statistics", statistics, name="statistics"),
+    path(r"^(?P<pk>[0-9]+)/supprimer'", supprimer, name="supprimer"),
     #path("api/towns", towns, name="towns"),
     #path("api/user", user, name="user"),
     #path("api/swagger", schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

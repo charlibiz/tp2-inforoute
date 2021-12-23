@@ -1,5 +1,5 @@
 from django.http.request import HttpRequest
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.conf.urls import url
 from django_app.models import ville, Locateur, Locataire
 from django.contrib.auth.models import User
@@ -123,3 +123,9 @@ def towns(request):
 
 
 
+def supprimer(request, user_id):
+    user = get_object_or_404(users, pk=user_id)
+    # if request.method == "POST":
+    user.delete()
+    #     return redirect('/')
+    # return render (request, 'ui_app/users.html',{'user':user})

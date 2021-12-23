@@ -59,7 +59,7 @@
                           <form method="POST" action="{% url 'users' %}" >
                               {% csrf_token %}
                               <button class="btn btn-danger" type="submit" name="orderid" value="{{ user.id }}">
-                                  <i class="fas fa-pen"></i> Supprimer
+                                  <i class="fas fa-trash"></i> Supprimer
                               </button>
                           </form>
                       </div>
@@ -90,8 +90,10 @@
                           <form method="POST" action="{% url 'users' %}" >
                               {% csrf_token %}
                               <button class="btn btn-danger" type="submit" name="orderid" value="{{ user.id }}">
-                                  <i class="fas fa-pen"></i> Supprimer
+                                  <i class="fas fa-trash"></i> Supprimer
                               </button>
+
+                              
                           </form>
                       </div>
                   </div>
@@ -113,7 +115,9 @@
           action="{% url 'users' %}"
         >
           {% csrf_token %}
-          <button class="btn btn-success" type="submit"><i class="fas fa-plus"></i> Ajouter</button>
+          <a class="btn btn-success" type="submit" href="/register"> 
+            <i class="fas fa-plus"></i>Ajouter
+          </a>
         </form>
 
 
