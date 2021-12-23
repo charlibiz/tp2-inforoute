@@ -1,0 +1,88 @@
+{% extends '../base.html' %}
+
+
+{% block title %}Incription{% endblock %} 
+
+{% block content %}
+{% include './navbar.html' %}
+<div class="row justify-content-md-center">
+<div class="col-6 ">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Incription</h5>
+        <form
+          class=""
+          method="POST"
+          action="{% url 'register' %}"
+        >
+        {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Addresse courriel</label
+            >
+            <input name="username" type="email" class="form-control" required />
+          </div>
+          
+          <div class="mb-3">
+            <select class="form-select" name="profil" >
+              <option selected>Sélectionnez un profil</option>
+              <option value="locataire">Locataire</option>
+              <option value="locateur">Locateur</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <select class="form-select" name="gender" >
+              <option selected>Genre</option>
+              <option value="M">Masculin</option>
+              <option value="F">Féminin</option>
+            </select>
+          </div>
+
+          
+          <div class="mb-3">
+            <select class="form-select" name="town" >
+              <option selected>Villes</option>
+              {% for object in towns %}
+              
+              <option value={{ object.name }}>{{ object.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          
+          
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Mot de passe</label
+            >
+            <input name="password" type="password" class="form-control" required/>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Confirmation du mot de passe</label
+            >
+            <input type="password" class="form-control" />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-user-plus"></i> Ajouter
+          </button>
+        </form>
+      </div>
+      {% if status == true %}
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="..." class="rounded me-2" alt="...">
+          <strong class="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Hello, world! This is a toast message.
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+  
+{% endblock %}

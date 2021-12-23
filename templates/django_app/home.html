@@ -1,0 +1,28 @@
+{% extends '../base.html' %}
+
+{% block title %}Résultat{% endblock %}
+
+{% block content %}
+
+{% include './navbar.html' with token=token %}
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Bienvenue sur l'interface d'administration</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin convallis urna quis ultricies. Sed in lorem erat. Curabitur varius sem ac tempor pulvinar. Praesent in velit in velit venenatis rhoncus sed non ex. Nulla auctor malesuada ipsum egestas viverra. Aliquam posuere bibendum augue eu sollicitudin. Praesent vel purus purus.</p>
+      <form
+          class="form-inline my-3 my-lg-0 "
+          method="GET"
+          action="{% url 'users' %}"
+        >
+          {% csrf_token %}
+          <button class="btn btn-primary" type="submit">Gestion des utilisateurs <i class="fas fa-chevron-right"></i></button>
+        </form>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

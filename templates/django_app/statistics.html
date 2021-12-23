@@ -1,0 +1,37 @@
+{% extends '../base.html' %}
+
+{% block title %}Statistics{% endblock %} 
+
+{% block content %}
+{% include './navbar.html' %}
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-chart-bar"></i> Statistiques</h5>
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td>Nombre de locataires : </td>
+          </tr>
+          <tr>
+            <td>Nombre de locateurs : </td>
+          </tr>
+          <tr>
+            <td>Nombre de chambres : </td>
+          </tr>
+          <tr>
+            <td>Les réservations : </td>
+          </tr>
+          <tr>
+            <td>Bénéfice total : </td>
+          </tr>
+          <tr>
+            <td>Total des sommes reçues : </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
